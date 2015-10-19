@@ -1,0 +1,18 @@
+{
+  "name": "irregex",
+  "version": "1.0.0",
+  "description": "The irregular expression engine",
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/jtibbertsma/irregex"
+  },
+  "keywords": [
+    "regex"
+  ],
+  "author": "Joseph Tibbertsma",
+  "dependencies": {
+    "grunt": "~0.4",
+    "jison": "~0.4",
+    "grunt-jison": "~1.3"
+  }
+}
