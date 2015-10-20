@@ -3,7 +3,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     jison: {
       markdown: {
-        files: { 'grammar/regex.y': 'lib/parser.js' }
+        files: { 'grammar/regex.y': 'lib/_parser.js' }
       }
     }
   });
