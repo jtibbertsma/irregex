@@ -148,7 +148,7 @@ noCapture
       $$ = {
         type: 'GROUP',
         grouptype: 'NOCAPTURE',
-        value = $2
+        value: $2
       };
     }
   ;
