@@ -53,4 +53,21 @@ describe("parser", function () {
       });
     });
   });
+
+  describe('groups', function () {
+    var groupTree;
+
+    beforeEach(function () {
+      groupTree = parser.parse('(a*a*a*)')[0];
+    });
+
+    it('detects groups', function () {
+      expect(groupTree.length).toEqual(1);
+      expect(groupTree[0].grouptype).toEqual('CAPTURE');
+    });
+
+    it('parses group contents properly', function () {
+      expect(groupTree[0].value[0].length).toEqual(3);
+    });
+  });
 });
