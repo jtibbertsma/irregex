@@ -2,6 +2,8 @@
 // subarray is an alternation path. The items in the subarray
 // are javascript objects representing a discrete part of the regular
 // expression.
+
+// TODO: anchors/assertions, character classes,
 %%
 topLevel
   : regex tEND
