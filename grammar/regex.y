@@ -23,23 +23,6 @@ regex
   ;
 
 expr
-  : literal
-    {
-      $$ = {
-        type: 'LITERAL',
-        value: $1
-      };
-    }
-  | subexpr
-  ;
-
-literal
-  : tCHAR
-  | literal tCHAR
-    { $$ = $1 + $2; }
-  ;
-
-subexpr
   : chunk
     {
       $1.repetition = {
