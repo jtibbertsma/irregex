@@ -1,5 +1,5 @@
 // A syntax tree for a regular expression is an array of arrays. Each
-// subarray in the main array is a alternation path. The items the subarray
+// subarray is an alternation path. The items in the subarray
 // are javascript objects representing a discrete part of the regular
 // expression.
 %%

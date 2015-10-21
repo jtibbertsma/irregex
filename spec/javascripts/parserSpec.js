@@ -31,13 +31,19 @@ describe("parser", function () {
     });
 
     it('detects repetition', function () {
-      var repetition = simpleTree[simpleTree.length-1].repetition.range;
-      expect(repetition[0]).toEqual(0);
-      expect(repetition[1]).toBeGreaterThan(100000);
+      var range = simpleTree[simpleTree.length-1].repetition.range;
+      expect(range[0]).toEqual(0);
+      expect(range[1]).toBeGreaterThan(100000);
     });
 
     it('detects modifiers', function () {
       expect(parser.parse('a??')[0][0].repetition.type).toEqual('lazy');
+    });
+
+    it('parses range notation', function () {
+      var range = parser.parse('a{12,467}')[0][0].repetition.range;
+      expect(range[0]).toEqual(12);
+      expect(range[1]).toEqual(467);
     });
 
     describe('the lexer', function () {
