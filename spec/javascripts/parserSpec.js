@@ -70,4 +70,19 @@ describe("parser", function () {
       expect(groupTree[0].value[0].length).toEqual(3);
     });
   });
+
+  describe('subroutines', function () {
+
+    it('throws an error for (?01)', function () {
+      expect(function () {
+        parser.parse('abcde(?01)');
+      }).toThrow();
+    });
+
+    it('detects subroutines', function () {
+      var node = parser.parse('(?42)')[0][0];
+      expect(node.type).toEqual('SUBROUTINE');
+      expect(node.value).toEqual(42);
+    });
+  });
 });
