@@ -84,5 +84,29 @@ describe("parser", function () {
       expect(node.type).toEqual('SUBROUTINE');
       expect(node.value).toEqual(42);
     });
+
+    it('recognizes a recursion token', function () {
+      var node = parser.parse('(?R)')[0][0];
+      expect(node.type).toEqual('SUBROUTINE');
+      expect(node.value).toEqual(0);
+    });
+  });
+
+  describe('backslashes', function () {
+
+    it('treats backslashed special characters as literals', function () {
+      var tree = parser.parse('\\*\\+\\{\\(\\?')[0];
+      expect(tree.length).toEqual(1);
+      expect(tree[0].value).toEqual('*+{(?');
+    });
+
+    describe('backreferences', function () {
+
+      it('detects backreferences', function () {
+        var node = parser.parse('\\13')[0][0];
+        expect(node.type).toEqual('BACKREF');
+        expect(node.value).toEqual(13);
+      });
+    });
   });
 });

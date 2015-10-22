@@ -174,4 +174,11 @@ subroutine
         value: parseInt($2)
       };
     }
+  | '?' 'R'
+    {
+      $$ = {
+        type: 'SUBROUTINE',
+        value: 0
+      }
+    }
   ;
