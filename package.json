@@ -10,7 +10,8 @@
     "regex"
   ],
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "postinstall": "grunt jison"
   },
   "author": "Joseph Tibbertsma",
   "dependencies": {
