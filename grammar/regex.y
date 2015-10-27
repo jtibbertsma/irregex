@@ -32,7 +32,7 @@ expr
         value: $1
       };
     }
-  | subexpr
+  | repeatable
   ;
 
 literal
@@ -41,7 +41,7 @@ literal
     { $$ = $1 + $2; }
   ;
 
-subexpr
+repeatable
   : chunk
     {
       $1.repetition = {
