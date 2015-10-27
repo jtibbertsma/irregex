@@ -15,7 +15,7 @@ topLevel
 regex
   : expr
     { $$ = [[$1]]; }
-  | regex regex
+  | regex expr
     {
       $1[$1.length-1].push($2);
       $$ = $1;
